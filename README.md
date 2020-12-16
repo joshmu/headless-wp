@@ -1,10 +1,12 @@
-# This is a [Next.js](https://nextjs.org/) & [Tailwind CSS](https://tailwindcss.com/) starter project.
+# Headless Wordpress Next JS
 
-- [Framer Motion](https://www.framer.com/motion/) is inlcluded.
+Utilizing Wordpress as a Headless CMS with Nextjs as the front end.
+
+## This is a [Next.js](https://nextjs.org/) & [Tailwind CSS](https://tailwindcss.com/) starter project.
+
+- [Framer Motion](https://www.framer.com/motion/) is included.
 - [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) is inlcluded.
 - Light and Dark Theme Toggle
-
-Some additional experimental features are enabled in `tailwind.config.js`: _uniformColorPalette, extendedSpacingScale, extendedFontSizeScale_
 
 ## Getting Started
 
