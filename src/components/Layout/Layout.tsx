@@ -1,3 +1,15 @@
+/**
+ * @path /src/components/Layout/Layout.tsx
+ *
+ * @project headless-wp
+ * @file Layout.tsx
+ *
+ * @author Josh Mu <hello@joshmu.dev>
+ * @created Wednesday, 16th December 2020
+ * @modified Thursday, 17th December 2020 10:11:23 am
+ * @copyright © 2020 - 2020 MU
+ */
+
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { useEffect, useRef } from 'react'
@@ -17,9 +29,9 @@ type MetaRefType = {
 export const Layout = ({ children }: LayoutProps) => {
   // todo: update in production
   const metaRef = useRef<MetaRefType>({
-    title: 'Nextjs TailwindCss Starter Template',
+    title: 'headless-wp',
     description: 'This is the meta description for the website',
-    keywords: 'josh mu, web dev, nextjs, tailwindcss',
+    keywords: 'josh mu, web dev, nextjs, tailwindcss, headless, wordpress',
     origin: null,
     imgUrl: '/assets/avatar.jpg',
   })

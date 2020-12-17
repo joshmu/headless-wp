@@ -2,6 +2,23 @@
 
 Utilizing Wordpress as a Headless CMS with Nextjs as the front end.
 
+### PLUGINS REQUIRED
+
+_Advanced Custom Fields_ By Elliot Condon
+_Custom Post Type UI_ By WebDevStudio
+_Api V2 Menus_ By Claudio La Barbera
+_ACF to WP-API_ by Chris hutchinson
+
+**Activate all plugins**
+
+### ADMIN
+
+`/wp-admin`
+
+### JSON
+
+`/wp-json`
+
 ## This is a [Next.js](https://nextjs.org/) & [Tailwind CSS](https://tailwindcss.com/) starter project.
 
 - [Framer Motion](https://www.framer.com/motion/) is included.
