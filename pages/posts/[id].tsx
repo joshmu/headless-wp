@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Friday, 18th December 2020 2:49:19 pm
+ * @modified Friday, 18th December 2020 3:08:02 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -27,7 +27,7 @@ const PostPage: NextPage<Props> = ({ post }) => {
     <Layout>
       <div>
         <h1>{post.title.rendered}</h1>
-        <p>{post.content.rendered}</p>
+        <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       </div>
       <Link href='/postIndex'>All Posts</Link>
     </Layout>
@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async context => {
   const posts: Post[] = await postsRes.json()
   const paths = posts.map(post => {
     return {
-      params: { id: post.id.toString() },
+      params: { id: post.slug },
     }
   })
 
@@ -47,10 +47,10 @@ export const getStaticPaths: GetStaticPaths = async context => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postRes = await fetch(`${apiUrl}/wp-json/wp/v2/posts/${params.id}`)
-  const post: Post = await postRes.json()
+  const postRes = await fetch(`${apiUrl}/wp-json/wp/v2/posts?slug=${params.id}`)
+  const posts: Post[] = await postRes.json()
 
-  return { props: { post } }
+  return { props: { post: posts[0] } }
 }
 
 export default PostPage

@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Friday, 18th December 2020 2:21:17 pm
+ * @modified Friday, 18th December 2020 3:03:37 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -33,7 +33,7 @@ const postIndex: NextPage<Props> = ({ posts }) => {
       <h1 className='text-3xl'>postIndex</h1>
       <ul className='mt-4'>
         {posts.map(post => (
-          <Link key={post.id} href={`/posts/${post.id}`}>
+          <Link key={post.id} href={`/posts/${post.slug}`}>
             <li className='cursor-pointer'>{post.title.rendered}</li>
           </Link>
         ))}
