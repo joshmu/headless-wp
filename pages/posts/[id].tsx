@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Friday, 18th December 2020 3:08:02 pm
+ * @modified Friday, 18th December 2020 3:20:21 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -14,9 +14,8 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { apiUrl } from 'src/config'
 
+import { Post } from '@/components/PostIndex/PostIndex'
 import { Layout } from '@/layout/Layout'
-
-import { Post } from '../postIndex'
 
 interface Props {
   post: Post
