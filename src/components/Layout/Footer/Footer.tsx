@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Saturday, 19th December 2020
- * @modified Saturday, 19th December 2020 2:03:23 pm
+ * @modified Saturday, 19th December 2020 3:04:45 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -20,7 +20,7 @@ interface Props {
 
 export const Footer = ({ links }: Props) => {
   return (
-    <div className='flex items-center py-4 mx-auto border-t text-md'>
+    <div className='absolute bottom-0 flex items-center w-full py-4 mx-auto border-t text-md'>
       <div className='flex flex-col items-center justify-center w-full'>
         <p>Mu - {new Date().getFullYear()}</p>
         <nav>

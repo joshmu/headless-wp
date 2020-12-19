@@ -6,12 +6,13 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 2:09:16 pm
+ * @modified Saturday, 19th December 2020 3:04:18 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import { NextPage } from 'next'
 
+import { Slider } from '@/components/Slider/Slider'
 import { LinkType } from '@/layout/Header/Header'
 import { Layout } from '@/layout/Layout'
 
@@ -25,9 +26,12 @@ interface Props {
 const Home: NextPage<Props> = ({ menu }) => {
   return (
     <Layout menu={menu}>
-      <h1 className='p-8 text-6xl font-bold cursor-pointer'>
-        Headless Wordpress
-      </h1>
+      <div className='mb-12'>
+        <h1 className='p-8 text-6xl font-bold cursor-pointer'>
+          Headless Wordpress
+        </h1>
+        <Slider />
+      </div>
     </Layout>
   )
 }
