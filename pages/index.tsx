@@ -6,28 +6,18 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 11:38:43 am
+ * @modified Saturday, 19th December 2020 12:07:54 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import Link from 'next/link'
 
-import { useThemeContext } from '@/context/themeContext'
 import { Layout } from '@/layout/Layout'
 
 export default function Home() {
-  const { toggleTheme } = useThemeContext()
-
-  const handleClick = () => {
-    toggleTheme()
-  }
-
   return (
     <Layout>
-      <h1
-        onClick={handleClick}
-        className='p-8 text-6xl font-bold cursor-pointer'
-      >
+      <h1 className='p-8 text-6xl font-bold cursor-pointer'>
         Headless Wordpress
       </h1>
       <Link href='/post-index'>All Posts</Link>

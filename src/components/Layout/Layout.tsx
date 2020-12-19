@@ -6,13 +6,17 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Thursday, 17th December 2020 10:11:23 am
+ * @modified Saturday, 19th December 2020 12:12:26 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { useEffect, useRef } from 'react'
+
+import { useThemeContext } from '@/context/themeContext'
+
+import { PostIndex } from '../PostIndex/PostIndex'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -77,9 +81,59 @@ export const Layout = ({ children }: LayoutProps) => {
         />
         <meta name='twitter:image' content={metaRef.current.imgUrl} />
       </Head>
+
       <div className='min-h-screen overflow-hidden font-sans antialiased transition-colors duration-200 ease-in-out'>
-        <main>{children}</main>
+        <Header />
+
+        <main className='grid flex-1 grid-cols-4'>
+          <section className='col-span-3'>{children}</section>
+
+          <aside className='col-span-1'>
+            <PostIndex limit={5} />
+          </aside>
+        </main>
+
+        <Footer />
       </div>
     </motion.div>
+  )
+}
+
+const Header = () => {
+  const { toggleTheme } = useThemeContext()
+
+  const handleClick = () => {
+    toggleTheme()
+  }
+
+  return (
+    <div className='container flex items-center py-4 mx-auto text-xl'>
+      <div className='flex justify-between w-full'>
+        <div
+          onClick={handleClick}
+          className='text-3xl font-bold cursor-pointer'
+        >
+          Headless Wordpress
+        </div>
+        <nav>
+          <ul className='flex space-x-4'>
+            <li className='cursor-pointer hover:underline'>one</li>
+            <li className='cursor-pointer hover:underline'>two</li>
+            <li className='cursor-pointer hover:underline'>three</li>
+            <li className='cursor-pointer hover:underline'>four</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  )
+}
+
+const Footer = () => {
+  return (
+    <div className='flex items-center py-4 mx-auto border-t text-md'>
+      <div className='flex items-center justify-center w-full'>
+        <p>Mu - {new Date().getFullYear()}</p>
+      </div>
+    </div>
   )
 }
