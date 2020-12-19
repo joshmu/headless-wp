@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Friday, 18th December 2020 3:19:44 pm
+ * @modified Saturday, 19th December 2020 11:51:45 am
  * @copyright © 2020 - 2020 MU
  */
 
@@ -20,7 +20,7 @@ interface Props {}
 const postIndex: NextPage<Props> = () => {
   return (
     <Layout>
-      <PostIndex />
+      <PostIndex limit={99} />
     </Layout>
   )
 }

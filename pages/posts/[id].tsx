@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Friday, 18th December 2020 3:20:21 pm
+ * @modified Saturday, 19th December 2020 11:56:38 am
  * @copyright © 2020 - 2020 MU
  */
 
@@ -14,7 +14,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import { apiUrl } from 'src/config'
 
-import { Post } from '@/components/PostIndex/PostIndex'
+import { Post, PostIndex } from '@/components/PostIndex/PostIndex'
 import { Layout } from '@/layout/Layout'
 
 interface Props {
@@ -24,11 +24,15 @@ interface Props {
 const PostPage: NextPage<Props> = ({ post }) => {
   return (
     <Layout>
-      <div>
-        <h1>{post.title.rendered}</h1>
+      <div className='text-xl'>
+        <h1 className='text-3xl'>{post.title.rendered}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
       </div>
-      <Link href='/postIndex'>All Posts</Link>
+      <div className='mt-4 font-bold'>
+        <Link href='/post-index'>All Posts</Link>
+      </div>
+
+      <PostIndex limit={3} />
     </Layout>
   )
 }

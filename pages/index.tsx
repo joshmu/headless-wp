@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Friday, 18th December 2020 2:49:36 pm
+ * @modified Saturday, 19th December 2020 11:38:43 am
  * @copyright © 2020 - 2020 MU
  */
 
@@ -30,7 +30,7 @@ export default function Home() {
       >
         Headless Wordpress
       </h1>
-      <Link href='/postIndex'>All Posts</Link>
+      <Link href='/post-index'>All Posts</Link>
     </Layout>
   )
 }
