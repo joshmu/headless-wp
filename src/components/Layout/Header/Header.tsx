@@ -6,12 +6,12 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Saturday, 19th December 2020
- * @modified Saturday, 19th December 2020 2:12:47 pm
+ * @modified Saturday, 19th December 2020 3:35:08 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { getSlug } from 'src/helpers'
 
 import { useThemeContext } from '@/context/themeContext'
 
@@ -27,8 +27,6 @@ interface Props {
 
 export const Header = ({ links }: Props) => {
   const { toggleTheme } = useThemeContext()
-
-  useEffect(() => {}, [])
 
   return (
     <div className='container flex items-center py-4 mx-auto text-xl'>
@@ -47,14 +45,11 @@ export const Header = ({ links }: Props) => {
             <li className='cursor-pointer hover:underline'>
               <Link href='/post-index'>All Posts</Link>
             </li>
-            {links.map(link => {
-              // do stuff...
-              return (
-                <li key={link.ID} className='cursor-pointer hover:underline'>
-                  <Link href={link.url}>{link.title}</Link>
-                </li>
-              )
-            })}
+            {links.map(link => (
+              <li key={link.ID} className='cursor-pointer hover:underline'>
+                <Link href={`/${getSlug(link.url)}`}>{link.title}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

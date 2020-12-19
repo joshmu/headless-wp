@@ -6,10 +6,11 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Saturday, 19th December 2020
- * @modified Saturday, 19th December 2020 3:06:04 pm
+ * @modified Saturday, 19th December 2020 3:20:05 pm
  * @copyright © 2020 - 2020 MU
  */
 
+import Link from 'next/link'
 import Carousel from 'nuka-carousel'
 import { useEffect, useState } from 'react'
 import { apiUrl } from 'src/config'
@@ -25,20 +26,24 @@ export const Slider = () => {
       console.log(data)
       setSlides(data)
     })
+
+    // * also create custom field in wp admin, 'acf' for slide post so we can append additional data such as 'link' url
+    // _Advanced Custom Fields_ By Elliot Condon
   }, [])
 
   return (
     <div className='w-1/2 h-full mx-auto'>
       <Carousel>
         {slides.map(slide => (
-          <img
-            key={slide.id}
-            src={
-              slide._embedded['wp:featuredmedia'][0].media_details.sizes.large
-                .source_url
-            }
-            alt={slide.title.rendered}
-          />
+          <Link href={slide.acf.link} key={slide.id}>
+            <img
+              src={
+                slide._embedded['wp:featuredmedia'][0].media_details.sizes.large
+                  .source_url
+              }
+              alt={slide.title.rendered}
+            />
+          </Link>
         ))}
       </Carousel>
     </div>

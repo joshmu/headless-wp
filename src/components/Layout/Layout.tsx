@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 1:59:59 pm
+ * @modified Saturday, 19th December 2020 3:35:47 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -63,6 +63,7 @@ export const Layout = ({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
     >
       <Head>
         <title>{metaRef.current.title}</title>

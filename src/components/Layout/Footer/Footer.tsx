@@ -6,11 +6,12 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Saturday, 19th December 2020
- * @modified Saturday, 19th December 2020 3:04:45 pm
+ * @modified Saturday, 19th December 2020 3:34:55 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import Link from 'next/link'
+import { getSlug } from 'src/helpers'
 
 import { LinkType } from '../Header/Header'
 
@@ -25,14 +26,11 @@ export const Footer = ({ links }: Props) => {
         <p>Mu - {new Date().getFullYear()}</p>
         <nav>
           <ul className='flex space-x-4'>
-            {links.map(link => {
-              // do stuff...
-              return (
-                <li key={link.ID} className='cursor-pointer hover:underline'>
-                  <Link href={link.url}>{link.title}</Link>
-                </li>
-              )
-            })}
+            {links.map(link => (
+              <li key={link.ID} className='cursor-pointer hover:underline'>
+                <Link href={`/${getSlug(link.url)}`}>{link.title}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
