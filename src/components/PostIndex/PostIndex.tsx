@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Saturday, 19th December 2020 12:56:51 pm
+ * @modified Saturday, 19th December 2020 2:11:12 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -14,6 +14,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { apiUrl } from 'src/config'
 import { fetcher } from 'src/helpers'
+
+import { LinkType } from '@/layout/Header/Header'
 
 interface Props {
   limit?: number

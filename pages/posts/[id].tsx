@@ -6,23 +6,28 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Saturday, 19th December 2020 12:20:01 pm
+ * @modified Saturday, 19th December 2020 2:10:12 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { apiUrl } from 'src/config'
 
-import { Post, PostIndex } from '@/components/PostIndex/PostIndex'
+import { Post } from '@/components/PostIndex/PostIndex'
+import { LinkType } from '@/layout/Header/Header'
 import { Layout } from '@/layout/Layout'
 
 interface Props {
   post: Post
+  menu: {
+    primaryLinks: LinkType[]
+    secondaryLinks: LinkType[]
+  }
 }
 
-const PostPage: NextPage<Props> = ({ post }) => {
+const PostPage: NextPage<Props> = ({ post, menu }) => {
   return (
-    <Layout>
+    <Layout menu={menu}>
       <div className='m-4 text-xl'>
         <h1 className='text-3xl'>{post.title.rendered}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />

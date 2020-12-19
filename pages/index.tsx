@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 1:58:31 pm
+ * @modified Saturday, 19th December 2020 2:09:16 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -17,8 +17,8 @@ import { Layout } from '@/layout/Layout'
 
 interface Props {
   menu: {
-    primaryLinks?: LinkType[]
-    secondaryLinks?: LinkType[]
+    primaryLinks: LinkType[]
+    secondaryLinks: LinkType[]
   }
 }
 
