@@ -6,27 +6,29 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Saturday, 19th December 2020
- * @modified Saturday, 19th December 2020 1:02:23 pm
+ * @modified Saturday, 19th December 2020 1:45:32 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { apiUrl } from 'src/config'
-import { fetcher } from 'src/helpers'
+import { useEffect } from 'react'
 
 import { useThemeContext } from '@/context/themeContext'
 
-export const Header = () => {
-  const [links, setLinks] = useState([])
+export interface LinkType {
+  ID: number
+  url: string
+  title: string
+}
 
+interface Props {
+  links: LinkType[]
+}
+
+export const Header = ({ links }: Props) => {
   const { toggleTheme } = useThemeContext()
 
-  useEffect(() => {
-    fetcher(`${apiUrl}/wp-json/menus/v1/menus/main-menu`).then(data => {
-      setLinks(data.items)
-    })
-  }, [])
+  useEffect(() => {}, [])
 
   return (
     <div className='container flex items-center py-4 mx-auto text-xl'>

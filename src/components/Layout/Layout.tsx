@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 12:55:55 pm
+ * @modified Saturday, 19th December 2020 1:59:59 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -17,10 +17,14 @@ import { useEffect, useRef } from 'react'
 import { PostIndex } from '@/components/PostIndex/PostIndex'
 
 import { Footer } from './Footer/Footer'
-import { Header } from './Header/Header'
+import { Header, LinkType } from './Header/Header'
 
 type LayoutProps = {
   showPosts?: boolean
+  menu: {
+    primaryLinks: LinkType[]
+    secondaryLinks: LinkType[]
+  }
   children: React.ReactNode
 }
 
@@ -32,7 +36,14 @@ type MetaRefType = {
   imgUrl: string
 }
 
-export const Layout = ({ showPosts = true, children }: LayoutProps) => {
+export const Layout = ({
+  showPosts = true,
+  menu = {
+    primaryLinks: [],
+    secondaryLinks: [],
+  },
+  children,
+}: LayoutProps) => {
   // todo: update in production
   const metaRef = useRef<MetaRefType>({
     title: 'headless-wp',
@@ -85,7 +96,7 @@ export const Layout = ({ showPosts = true, children }: LayoutProps) => {
       </Head>
 
       <div className='min-h-screen overflow-hidden font-sans antialiased transition-colors duration-200 ease-in-out'>
-        <Header />
+        <Header links={menu.primaryLinks} />
 
         <main className='grid flex-1 grid-cols-4'>
           <section className='col-span-3'>{children}</section>
@@ -95,7 +106,7 @@ export const Layout = ({ showPosts = true, children }: LayoutProps) => {
           </aside>
         </main>
 
-        <Footer />
+        <Footer links={menu.secondaryLinks} />
       </div>
     </motion.div>
   )

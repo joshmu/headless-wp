@@ -6,18 +6,30 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 12:19:04 pm
+ * @modified Saturday, 19th December 2020 1:58:31 pm
  * @copyright © 2020 - 2020 MU
  */
 
+import { NextPage } from 'next'
+
+import { LinkType } from '@/layout/Header/Header'
 import { Layout } from '@/layout/Layout'
 
-export default function Home() {
+interface Props {
+  menu: {
+    primaryLinks?: LinkType[]
+    secondaryLinks?: LinkType[]
+  }
+}
+
+const Home: NextPage<Props> = ({ menu }) => {
   return (
-    <Layout>
+    <Layout menu={menu}>
       <h1 className='p-8 text-6xl font-bold cursor-pointer'>
         Headless Wordpress
       </h1>
     </Layout>
   )
 }
+
+export default Home
