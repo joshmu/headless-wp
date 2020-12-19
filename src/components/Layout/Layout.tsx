@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 12:12:26 pm
+ * @modified Saturday, 19th December 2020 12:29:49 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -14,11 +14,12 @@ import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { useEffect, useRef } from 'react'
 
-import { useThemeContext } from '@/context/themeContext'
+import { PostIndex } from '@/components/PostIndex/PostIndex'
 
-import { PostIndex } from '../PostIndex/PostIndex'
+import { Header } from './Header/Header'
 
 type LayoutProps = {
+  showPosts?: boolean
   children: React.ReactNode
 }
 
@@ -30,7 +31,7 @@ type MetaRefType = {
   imgUrl: string
 }
 
-export const Layout = ({ children }: LayoutProps) => {
+export const Layout = ({ showPosts = true, children }: LayoutProps) => {
   // todo: update in production
   const metaRef = useRef<MetaRefType>({
     title: 'headless-wp',
@@ -89,42 +90,13 @@ export const Layout = ({ children }: LayoutProps) => {
           <section className='col-span-3'>{children}</section>
 
           <aside className='col-span-1'>
-            <PostIndex limit={5} />
+            {showPosts && <PostIndex limit={5} />}
           </aside>
         </main>
 
         <Footer />
       </div>
     </motion.div>
-  )
-}
-
-const Header = () => {
-  const { toggleTheme } = useThemeContext()
-
-  const handleClick = () => {
-    toggleTheme()
-  }
-
-  return (
-    <div className='container flex items-center py-4 mx-auto text-xl'>
-      <div className='flex justify-between w-full'>
-        <div
-          onClick={handleClick}
-          className='text-3xl font-bold cursor-pointer'
-        >
-          Headless Wordpress
-        </div>
-        <nav>
-          <ul className='flex space-x-4'>
-            <li className='cursor-pointer hover:underline'>one</li>
-            <li className='cursor-pointer hover:underline'>two</li>
-            <li className='cursor-pointer hover:underline'>three</li>
-            <li className='cursor-pointer hover:underline'>four</li>
-          </ul>
-        </nav>
-      </div>
-    </div>
   )
 }
 
