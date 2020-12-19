@@ -6,15 +6,14 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Friday, 18th December 2020
- * @modified Saturday, 19th December 2020 11:56:19 am
+ * @modified Saturday, 19th December 2020 12:56:51 pm
  * @copyright © 2020 - 2020 MU
  */
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { apiUrl } from 'src/config'
-
-const fetcher = async url => fetch(url).then(res => res.json())
+import { fetcher } from 'src/helpers'
 
 interface Props {
   limit?: number

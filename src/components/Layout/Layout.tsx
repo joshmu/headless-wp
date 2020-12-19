@@ -6,7 +6,7 @@
  *
  * @author Josh Mu <hello@joshmu.dev>
  * @created Wednesday, 16th December 2020
- * @modified Saturday, 19th December 2020 12:29:49 pm
+ * @modified Saturday, 19th December 2020 12:55:55 pm
  * @copyright © 2020 - 2020 MU
  */
 
@@ -16,6 +16,7 @@ import { useEffect, useRef } from 'react'
 
 import { PostIndex } from '@/components/PostIndex/PostIndex'
 
+import { Footer } from './Footer/Footer'
 import { Header } from './Header/Header'
 
 type LayoutProps = {
@@ -97,15 +98,5 @@ export const Layout = ({ showPosts = true, children }: LayoutProps) => {
         <Footer />
       </div>
     </motion.div>
-  )
-}
-
-const Footer = () => {
-  return (
-    <div className='flex items-center py-4 mx-auto border-t text-md'>
-      <div className='flex items-center justify-center w-full'>
-        <p>Mu - {new Date().getFullYear()}</p>
-      </div>
-    </div>
   )
 }
