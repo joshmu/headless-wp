@@ -2,17 +2,12 @@
 
 Utilizing Wordpress as a headless CMS
 
-### ADMIN
-
-`/wp-admin`
-
-### JSON
-
-`/wp-json`
+admin: `/wp-admin`
+json: `/wp-json`
 
 Additionally in the wordpress backend a `slide` custom post type is created to integrate a slideshow with images.
 
-# Headless with Next
+# with Next
 
 Nextjs as the front end.
 
@@ -25,7 +20,7 @@ _ACF to WP-API_ by Chris hutchinson
 
 **Activate all plugins**
 
-# Headless with Gatsby
+# with Gatsby
 
 Gatsby as the front end.
 
