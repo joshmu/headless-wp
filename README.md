@@ -28,3 +28,14 @@ _ACF to WP-API_ by Chris hutchinson
 # Headless with Gatsby
 
 Gatsby as the front end.
+
+### PLUGINS REQUIRED
+
+#### Gatsby
+
+_gatsby-source-wordpress_
+
+#### WP
+
+_WPGraphQL_
+_WPGatsby_
