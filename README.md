@@ -7,6 +7,8 @@ json: `/wp-json`
 
 Additionally in the wordpress backend a `slide` custom post type is created to integrate a slideshow with images.
 
+_WP Migrate DB Pro_ plugin for local wp db migration to server
+
 # with Next (Rest Api)
 
 Nextjs as the front end.
@@ -34,3 +36,5 @@ _gatsby-source-wordpress_
 
 _WPGraphQL_
 _WPGatsby_
+
+Since Gatsby is statically generated.. In production install a wp plugin for webhooks to trigger a gatsby rebuild whenever backend data is modified.
