@@ -1,4 +1,4 @@
-# Wordpress
+# Wordpress (NEXT & GATSBY)
 
 Utilizing Wordpress as a headless CMS
 
@@ -7,7 +7,7 @@ json: `/wp-json`
 
 Additionally in the wordpress backend a `slide` custom post type is created to integrate a slideshow with images.
 
-# with Next
+# with Next (Rest Api)
 
 Nextjs as the front end.
 
@@ -20,7 +20,7 @@ _ACF to WP-API_ by Chris hutchinson
 
 **Activate all plugins**
 
-# with Gatsby
+# with Gatsby (Graphql)
 
 Gatsby as the front end.
 
